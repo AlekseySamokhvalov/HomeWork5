@@ -86,7 +86,49 @@ public class Main {
     public static void task3 () {
         System.out.println("Задача 3");
         // Пишем код для задачи 3
+        int year = 2021;
+
+        // определяем, является ли год високосным
+        boolean isLeapYear = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+
+        // выводим результат
+        if (isLeapYear) {
+            System.out.println(year + " год является високосным");
+        } else {
+            System.out.println(year + " год не является високосным");
+        }
+        /*
+        // цикл по всем годам от 0 до 2100
+        for (year = 0; year <= 2100; year++) {
+            // определяем, является ли текущий год високосным
+            boolean isLeapYear = false;
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        isLeapYear = true;
+                    }
+                } else {
+                    isLeapYear = true;
+                }
+            }
+
+            // если текущий год високосный, выводим его
+            if (isLeapYear) {
+                System.out.println(year + " год является високосным");
+            }
+        }
+        */
     }
+
 
     public static void task4 () {
         System.out.println("Задача 4");
