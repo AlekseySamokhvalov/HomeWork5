@@ -156,6 +156,36 @@ public class Main {
     public static void task5 () {
         System.out.println("Задача 5");
         // Пишем код для задачи 5
+        int monthNumber = 12;
+        String season;
+
+        switch(monthNumber) {
+            case 12:
+            case 1:
+            case 2:
+                season = "зима";
+                break;
+            case 3:
+            case 4:
+            case 5:
+                season = "весна";
+                break;
+            case 6:
+            case 7:
+            case 8:
+                season = "лето";
+                break;
+            case 9:
+            case 10:
+            case 11:
+                season = "осень";
+                break;
+            default:
+                System.out.println("Ошибка: некорректный номер месяца.");
+                return; // выходим из программы, если номер месяца некорректен
+        }
+
+        System.out.println(monthNumber + "-й месяц принадлежит к сезону " + season);
     }
 
 }
