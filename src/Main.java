@@ -11,21 +11,15 @@ public class Main {
     public static void task1 () {
         System.out.println("Задача 1");
         // Пишем код для задачи 1
-        int clientOS = 0; // 0 для iOS, 1 для Android
-/*
-        if (clientOS == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-        } else {
-            System.out.println("Неверное значение переменной clientOS");
-        }
-*/
+        final int IOS = 0;
+        final int ANDROID = 1;
+        int clientOS = IOS; // по умолчанию используется iOS
+
         switch (clientOS) {
-            case 0:
+            case IOS:
                 System.out.println("Установите версию приложения для iOS по ссылке");
                 break;
-            case 1:
+            case ANDROID:
                 System.out.println("Установите версию приложения для Android по ссылке");
                 break;
             default:
@@ -36,33 +30,18 @@ public class Main {
     public static void task2 () {
         System.out.println("Задача 2");
         // Пишем код для задачи 2
+        final int IOS = 0;
+        final int ANDROID = 1;
+        final int checkYear = 2015;
         int clientOS = 1; // 0 для iOS, 1 для Android
-        int clientDeviceYear = 2015; // год выпуска клиентского устройства
-/*
-        if (clientDeviceYear < 2015) {
-            if (clientOS == 0) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else if (clientOS == 1) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Неверное значение переменной clientOS");
-            }
-        } else {
-            if (clientOS == 0) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            } else if (clientOS == 1) {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Неверное значение переменной clientOS");
-            }
-        }
- */
-        if (clientDeviceYear < 2015) {
+        int clientDeviceYear = 2014; // год выпуска клиентского устройства
+
+        if (clientDeviceYear < checkYear) {
             switch (clientOS) {
-                case 0:
+                case IOS:
                     System.out.println("Установите облегченную версию приложения для iOS по ссылке");
                     break;
-                case 1:
+                case ANDROID:
                     System.out.println("Установите облегченную версию приложения для Android по ссылке");
                     break;
                 default:
@@ -71,10 +50,10 @@ public class Main {
             }
         } else {
             switch (clientOS) {
-                case 0:
+                case IOS:
                     System.out.println("Установите версию приложения для iOS по ссылке");
                     break;
-                case 1:
+                case ANDROID:
                     System.out.println("Установите версию приложения для Android по ссылке");
                     break;
                 default:
@@ -86,47 +65,21 @@ public class Main {
     public static void task3 () {
         System.out.println("Задача 3");
         // Пишем код для задачи 3
-        int year = 2021;
-
+        int year = 2010;
         // определяем, является ли год високосным
-        boolean isLeapYear = false;
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0) {
-                    isLeapYear = true;
+        if (year % 4 == 0) { // проверяем, делится ли год на 4 без остатка
+            if (year % 100 == 0) { // если да, то проверяем, делится ли год на 100 без остатка
+                if (year % 400 == 0) { // если да, то проверяем, делится ли год на 400 без остатка
+                    System.out.println(year + " год является високосным");
+                } else {
+                    System.out.println(year + " год не является високосным");
                 }
             } else {
-                isLeapYear = true;
+                System.out.println(year + " год является високосным");
             }
-        }
-
-        // выводим результат
-        if (isLeapYear) {
-            System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
         }
-        /*
-        // цикл по всем годам от 0 до 2100
-        for (year = 0; year <= 2100; year++) {
-            // определяем, является ли текущий год високосным
-            boolean isLeapYear = false;
-            if (year % 4 == 0) {
-                if (year % 100 == 0) {
-                    if (year % 400 == 0) {
-                        isLeapYear = true;
-                    }
-                } else {
-                    isLeapYear = true;
-                }
-            }
-
-            // если текущий год високосный, выводим его
-            if (isLeapYear) {
-                System.out.println(year + " год является високосным");
-            }
-        }
-        */
     }
 
 
@@ -156,47 +109,41 @@ public class Main {
     public static void task5 () {
         System.out.println("Задача 5");
         // Пишем код для задачи 5
-        int monthNumber = 12;
-        String season;
-/*
-        int monthNumber = 12;
+        final int JANUARY = 1;
+        final int FEBRUARY = 2;
+        final int MARCH = 3;
+        final int APRIL = 4;
+        final int MAY = 5;
+        final int JUNE = 6;
+        final int JULY = 7;
+        final int AUGUST = 8;
+        final int SEPTEMBER = 9;
+        final int OCTOBER = 10;
+        final int NOVEMBER = 11;
+        final int DECEMBER = 12;
+
+        int monthNumber = 11;
         String season;
 
-        if (monthNumber == 12 || monthNumber == 1 || monthNumber == 2) {
-            season = "зима";
-        } else if (monthNumber == 3 || monthNumber == 4 || monthNumber == 5) {
-            season = "весна";
-        } else if (monthNumber == 6 || monthNumber == 7 || monthNumber == 8) {
-            season = "лето";
-        } else if (monthNumber == 9 || monthNumber == 10 || monthNumber == 11) {
-            season = "осень";
-        } else {
-            System.out.println("Ошибка: некорректный номер месяца.");
-            return; // выходим из программы, если номер месяца некорректен
-        }
-
-        System.out.println(monthNumber + "-й месяц принадлежит к сезону " + season);
-    }
- */
         switch(monthNumber) {
-            case 12:
-            case 1:
-            case 2:
+            case JANUARY:
+            case FEBRUARY:
+            case DECEMBER:
                 season = "зима";
                 break;
-            case 3:
-            case 4:
-            case 5:
+            case MARCH:
+            case APRIL:
+            case MAY:
                 season = "весна";
                 break;
-            case 6:
-            case 7:
-            case 8:
+            case JUNE:
+            case JULY:
+            case AUGUST:
                 season = "лето";
                 break;
-            case 9:
-            case 10:
-            case 11:
+            case SEPTEMBER:
+            case OCTOBER:
+            case NOVEMBER:
                 season = "осень";
                 break;
             default:
