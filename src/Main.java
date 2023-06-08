@@ -11,6 +11,26 @@ public class Main {
     public static void task1 () {
         System.out.println("Задача 1");
         // Пишем код для задачи 1
+        int clientOS = 0; // 0 для iOS, 1 для Android
+/*
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Неверное значение переменной clientOS");
+        }
+*/
+        switch (clientOS) {
+            case 0:
+                System.out.println("Установите версию приложения для iOS по ссылке");
+                break;
+            case 1:
+                System.out.println("Установите версию приложения для Android по ссылке");
+                break;
+            default:
+                System.out.println("Неверное значение переменной clientOS");
+        }
     }
 
     public static void task2 () {
