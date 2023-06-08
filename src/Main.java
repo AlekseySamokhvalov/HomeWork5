@@ -133,6 +133,25 @@ public class Main {
     public static void task4 () {
         System.out.println("Задача 4");
         // Пишем код для задачи 4
+        int deliveryDistance = 95; // расстояние до клиента в км
+
+        int deliveryDays = 0; // количество дней доставки
+
+        if (deliveryDistance <= 20) {
+            deliveryDays = 1;
+        } else if (deliveryDistance <= 60) {
+            deliveryDays = 2;
+        } else if (deliveryDistance <= 100) {
+            deliveryDays = 3;
+        } else {
+            System.out.println("Доставка невозможна");
+            return; // выходим из программы, если доставка невозможна
+            //Если бы ключевое слово return не было бы указано в последнем else-блоке,
+            //то программа продолжила бы работу и выполнила бы последнюю строку System.out.println("Потребуется дней: " + deliveryDays);
+        }
+
+        System.out.println("Потребуется дней: " + deliveryDays);
+
     }
     public static void task5 () {
         System.out.println("Задача 5");
