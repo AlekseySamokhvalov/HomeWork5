@@ -158,7 +158,26 @@ public class Main {
         // Пишем код для задачи 5
         int monthNumber = 12;
         String season;
+/*
+        int monthNumber = 12;
+        String season;
 
+        if (monthNumber == 12 || monthNumber == 1 || monthNumber == 2) {
+            season = "зима";
+        } else if (monthNumber == 3 || monthNumber == 4 || monthNumber == 5) {
+            season = "весна";
+        } else if (monthNumber == 6 || monthNumber == 7 || monthNumber == 8) {
+            season = "лето";
+        } else if (monthNumber == 9 || monthNumber == 10 || monthNumber == 11) {
+            season = "осень";
+        } else {
+            System.out.println("Ошибка: некорректный номер месяца.");
+            return; // выходим из программы, если номер месяца некорректен
+        }
+
+        System.out.println(monthNumber + "-й месяц принадлежит к сезону " + season);
+    }
+ */
         switch(monthNumber) {
             case 12:
             case 1:
